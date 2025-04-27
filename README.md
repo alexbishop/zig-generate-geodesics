@@ -62,10 +62,10 @@ The output of this program is given as:
 
 The files `length*.summary` have the following format
 
-```txt
+```text
 processing length [length-of-elements-in-sphere]
 
-<timing information>
+[timing information]
 
 sphere size: [number-of-elements] ([number-of-geodesics])
 file size: [compressed-file-size] / [uncompressed-file-size] ([compression-ratio])
@@ -73,7 +73,7 @@ file size: [compressed-file-size] / [uncompressed-file-size] ([compression-ratio
 
 For example:
 
-```txt
+```text
 processing length 34
 
 real	240m27.913s
@@ -100,7 +100,7 @@ The uncompressed contexts of the files of the form `length*.data` contain one el
 
 Each line has the form:
 
-```txt
+```text
 [portrait]:[descend-set]:[count]
 ```
 
@@ -115,7 +115,7 @@ where
 
 Contents of `length3.data`:
 
-```txt
+```text
 (<Ab(>A1B)):D:1
 (<BA1):A:1
 (<aB(<a1b)):H:1
@@ -135,7 +135,7 @@ Contents of `length3.data`:
 
 Some lines from `length35.data`:
 
-```txt
+```text
 (<(<(<(<1BA)(<1BA)(<A1B))(=(<A1B)AB)(>ab(>a1b)))(=aB(<AB(<A1B)))(=(<1BA)(<a1b)(>(>ba1)ab))):H:2
 (<(<(<(<1BA)(<1BA)(<A1B))(=(<A1B)AB)(>ab(>a1b)))(=aB(<AB(<A1B)))(=(<1BA)(<a1b)(>A1B))):H:4
 (<(<(<(<1BA)(<1BA)(<A1B))(=(<A1B)AB)(>ab(>a1b)))(=aB(<AB(<A1B)))(=(<1BA)(<a1b)(>BA1))):H:1
@@ -155,7 +155,7 @@ Some lines from `length35.data`:
 
 Portraits can be defined recusively as follows
 
-```txt
+```text
 # the action of the generator a
 [portait] ~> 'a'
 
@@ -192,7 +192,7 @@ We encode the desend set as a single ASCII character.
 
 In particular, we encode it as
 
-```txt
+```text
  0100 x4 x3 x2 x1
 ```
 
@@ -214,7 +214,7 @@ This code was run on a Lenovo ThinkPad E15 with 12th Gen Intel(R) Core(TM) i3-12
 
 Note that I hibernated my computer partway through, so some of the timings are off (look at the `user` timing for more accurate information).
 
-```txt
+```text
 processing length 3
 
 real	0m0.008s
