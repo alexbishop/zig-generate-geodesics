@@ -15,8 +15,6 @@ pub fn main() !void {
     var output_buffer = std.io.bufferedWriter(std_out.writer());
     var output = output_buffer.writer();
 
-    var is_first: bool = true;
-
     while (try input_lines.next()) |line| {
         const split1: usize = std.mem.indexOfScalar(u8, line, ':') orelse continue;
         // split1 + 1 is then the descend set
@@ -25,43 +23,31 @@ pub fn main() !void {
         const split2: usize = split1 + 2;
 
         if (desc.a == false and desc.A == false) {
-            if (is_first) {
-                is_first = false;
-            } else {
-                try output.writeAll("\n");
-            }
-
             try output.writeAll(try FabGup.multiply(group_buffer[0..], "a", line[0..split1]));
             try output.writeAll(":");
             try output.writeByte(@bitCast(FabGup.DescendSet{ .a = true }));
             try output.writeAll(line[split2..]);
-
             try output.writeAll("\n");
 
             try output.writeAll(try FabGup.multiply(group_buffer[0..], "A", line[0..split1]));
             try output.writeAll(":");
             try output.writeByte(@bitCast(FabGup.DescendSet{ .A = true }));
             try output.writeAll(line[split2..]);
+            try output.writeAll("\n");
         }
 
         if (desc.b == false and desc.B == false) {
-            if (is_first) {
-                is_first = false;
-            } else {
-                try output.writeAll("\n");
-            }
-
             try output.writeAll(try FabGup.multiply(group_buffer[0..], "b", line[0..split1]));
             try output.writeAll(":");
             try output.writeByte(@bitCast(FabGup.DescendSet{ .b = true }));
             try output.writeAll(line[split2..]);
-
             try output.writeAll("\n");
 
             try output.writeAll(try FabGup.multiply(group_buffer[0..], "B", line[0..split1]));
             try output.writeAll(":");
             try output.writeByte(@bitCast(FabGup.DescendSet{ .B = true }));
             try output.writeAll(line[split2..]);
+            try output.writeAll("\n");
         }
     }
 

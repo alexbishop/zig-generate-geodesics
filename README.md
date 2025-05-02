@@ -208,6 +208,49 @@ For example, in ASCII, the letter `H` is encoded as `01001000` which would corre
 
 # Output of the program
 
+## Summary
+
+| length | spherical growth | spherical geodesic growth |
+| -- | -- | -- |
+| 3 | 16 | 16 |
+| 4 | 32 | 32 |
+| 5 | 64 | 64 |
+| 6 | 128 | 128 |
+| 7 | 256 | 256 |
+| 8 | 512 | 512 |
+| 9 | 1,024 | 1,024 |
+| 10 | 1,968 | 2,048 |
+| 11 | 3,608 | 3,664 |
+| 12 | 6,816 | 7,104 |
+| 13 | 12,704 | 13,424 |
+| 14 | 23,696 | 25,664 |
+| 15 | 43,720 | 48,432 |
+| 16 | 80,224 | 91,136 |
+| 17 | 146,432 | 170,304 |
+| 18 | 266,688 | 318,944 |
+| 19 | 484,464 | 591,984 |
+| 20 | 878,800 | 1,104,032 |
+| 21 | 1,589,376 | 2,049,584 |
+| 22 | 2,862,976 | 3,797,952 |
+| 23 | 5,145,456 | 7,004,976 |
+| 24 | 9,226,328 | 12,928,032 |
+| 25 | 16,495,488 | 23,712,040 |
+| 26 | 29,422,368 | 43,491,840 |
+| 27 | 52,346,136 | 79,512,504 |
+| 28 | 92,872,704 | 144,997,904 |
+| 29 | 164,374,672 | 263,539,944 |
+| 30 | 290,176,048 | 478,231,104 |
+| 31 | 511,135,408 | 864,602,376 |
+| 32 | 897,966,344 | 1,560,704,000 |
+| 33 | 1,573,794,776 | 2,808,866,784 |
+| 34 | 2,751,740,432 | 5,043,285,984 |
+| 35 | 4,802,049,192 | 9,030,311,920 |
+
+## Ouptut content
+
+**NOTE:** The output given in this section is for a slightly older version of the program. In particular, the file sizes will be different by around 1 byte. (The new version of the program ends the file with a `\n` character while the older version did not.)
+
+
 Here is some example output of the program.
 
 This code was run on a Lenovo ThinkPad E15 with 12th Gen Intel(R) Core(TM) i3-1215U CPU.

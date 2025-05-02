@@ -54,8 +54,6 @@ pub fn main() !void {
 
     // make sure to get the first lines of each subfile first
 
-    var has_output_line: bool = false;
-
     // now we're ready to process
     outer: while (try input_lines.next()) |in_line| {
         const split: usize = std.mem.indexOfScalar(u8, in_line, ':') orelse continue;
@@ -92,13 +90,9 @@ pub fn main() !void {
             }
         }
 
-        if (has_output_line) {
-            try output.writeAll("\n");
-        }
-
         // we're all good to output this one
         try output.writeAll(in_line);
-        has_output_line = true;
+        try output.writeAll("\n");
     }
 
     try output_buffer.flush();

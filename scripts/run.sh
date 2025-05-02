@@ -56,7 +56,7 @@ set -eo pipefail
 
 mkdir -p "$OUTDIR"
 mkdir -p "$SORT_TMPDIR"
-printf "1:@:1" | "$COMPRESS" >"$OUTDIR/length0.data"
+printf "1:@:1\n" | "$COMPRESS" >"$OUTDIR/length0.data"
 
 #################
 # length 1

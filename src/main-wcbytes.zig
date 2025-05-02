@@ -9,7 +9,7 @@ pub fn main() !void {
     while (true) {
         const read_len = try file.read(buffer[0..]);
         if (read_len == 0) {
-            try std.io.getStdOut().writer().print("{}", .{total});
+            try std.io.getStdOut().writer().print("{}\n", .{total});
             return;
         } else {
             total += read_len;

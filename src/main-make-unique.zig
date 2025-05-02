@@ -19,7 +19,6 @@ pub fn main() !void {
     var output_buffer = std.io.bufferedWriter(std_out.writer());
     var output = output_buffer.writer();
 
-    var has_output_entry: bool = false;
     var has_buffered_entry: bool = false;
     var desc_set: FabGup.DescendSet = .{};
     var num_buffer_len: usize = 0;
@@ -64,17 +63,12 @@ pub fn main() !void {
 
         // this is a new entry, so let's output the old
 
-        if (has_output_entry) {
-            try output.writeAll("\n");
-        }
-
         try output.writeAll(group_buffer[0..group_buffer_len]);
         try output.writeAll(":");
         try output.writeByte(@bitCast(desc_set));
         try output.writeAll(":");
         try output.writeAll(number_buffer[0..num_buffer_len]);
-
-        has_output_entry = true;
+        try output.writeAll("\n");
 
         // save the new entry
 
@@ -89,14 +83,12 @@ pub fn main() !void {
 
     if (has_buffered_entry) {
         // lets output one last entry
-        if (has_output_entry) {
-            try output.writeAll("\n");
-        }
         try output.writeAll(group_buffer[0..group_buffer_len]);
         try output.writeAll(":");
         try output.writeByte(@bitCast(desc_set));
         try output.writeAll(":");
         try output.writeAll(number_buffer[0..num_buffer_len]);
+        try output.writeAll("\n");
     }
 
     try output_buffer.flush();

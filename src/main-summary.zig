@@ -36,5 +36,5 @@ pub fn main() !void {
     }
 
     var std_out = std.io.getStdOut();
-    try std_out.writer().print("size {} ({s})", .{ size, num_buffer[0..num_buffer_len] });
+    try std_out.writer().print("size {} ({s})\n", .{ size, num_buffer[0..num_buffer_len] });
 }
